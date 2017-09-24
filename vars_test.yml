@@ -6,7 +6,7 @@
     - name: 
       set_fact: 
         version_admin: '{{version}}'
-      when: (version_admin is not defined) or (version_admin == '')
+      when: version_admin == ''
 
     - debug:
-        var: version_admin
+        var: ansible_facts.version_admin
