@@ -1,0 +1,13 @@
+---
+- name: test play
+  hosts: localhost
+  gather_facts: no
+
+  tasks:
+    - name: test task
+      tags: new_tags
+      ping:
+
+    - name: test task two
+      tags: another_tag
+      ping:
