@@ -3,10 +3,6 @@
   hosts: localhost
   gather_facts: no
   tasks:
-    - name: 
-      set_facts: 
-        version_admin: '{{version_ad}}'
-      when: version_admin is defined
 
     - name: 
       set_facts: 
