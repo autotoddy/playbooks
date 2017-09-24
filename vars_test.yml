@@ -3,13 +3,15 @@
   hosts: localhost
   gather_facts: no
   tasks:
-    - debug: 
-        var: var_one
-      when: var_one is defined
+    - name: 
+      set_facts: 
+        version_admin: '{{version_ad}}'
+      when: version_admin is defined
+
+    - name: 
+      set_facts: 
+        version_admin: '{{version}}'
+      when: version_admin is not defined
 
     - debug:
-        var: var_one
-      when: var_one is not defined
-
-    - name: ping
-      ping: 
+        var: version_admin
