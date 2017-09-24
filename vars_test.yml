@@ -1,0 +1,15 @@
+---
+- name: test play
+  hosts: localhost
+  gather_facts: no
+  tasks:
+    - debug: 
+        var: var_one
+      when: var_one is defined
+
+    - debug:
+        var: var_one
+      when: var_one is not defined
+
+    - name: ping
+      ping: 
