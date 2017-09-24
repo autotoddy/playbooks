@@ -4,9 +4,11 @@
   gather_facts: no
   tasks:
     - name: 
-      set_fact: 
-        version_admin: '{{version}}'
+      version_admin_new: '{{version}}'
       when: version_admin == ''
 
-    - debug:
-        var: ansible_facts.version_admin
+    - name: 
+      version_admin_new: '{{version_admin}}'
+      when: version_admin != ''
+
+    - debug: var=version_admin_new
